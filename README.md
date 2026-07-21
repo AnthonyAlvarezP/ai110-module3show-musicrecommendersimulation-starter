@@ -23,9 +23,20 @@ Some prompts to answer:
 
 - What features does each `Song` use in your system
   - For example: genre, mood, energy, tempo
+
+  The features 'Song' uses in my system are genre, mood, energy, tempo, valence, danceability, and acousticness.
+
 - What information does your `UserProfile` store
+
+  The information 'UserProfile' in my system will store favorite genre, mood, targeted energy, and wheter they like acoustic or not.
+
 - How does your `Recommender` compute a score for each song
+
+  My recommender will compute a score for each song by looking at their user profile and doing 1 minus the difference in energy, genre, mood, and acoustic score. Then adding all the scores into a total and determining what is a better match.
+
 - How do you choose which songs to recommend
+
+I will make a total_score and whichever has a higher total_score will be recommended next.
 
 You can include a simple diagram or bullet list if helpful.
 
@@ -71,13 +82,23 @@ You can add more tests in `tests/test_recommender.py`.
 Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
 
 ```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
-```
+User profile: genre=pop, mood=happy energy= 0.8
+Top Recommendations
+========================================
+1. Sunrise City - Neon Echo (Score: 5.96)
+   Reasons: genre match (+2.0), mood match (+1.0), energy similarity (+1.96), acoustic preference match (+1.0)
+----------------------------------------
+2. Gym Hero - Max Pulse (Score: 4.74)
+   Reasons: genre match (+2.0), energy similarity (+1.74), acoustic preference match (+1.0)
+----------------------------------------
+3. Rooftop Lights - Indigo Parade (Score: 3.92)
+   Reasons: mood match (+1.0), energy similarity (+1.92), acoustic preference match (+1.0)
+----------------------------------------
+4. Neon Warehouse - Pulse Fracture (Score: 2.90)
+   Reasons: energy similarity (+1.90), acoustic preference match (+1.0)
+----------------------------------------
+5. Night Drive Loop - Neon Echo (Score: 2.90)
+   Reasons: energy similarity (+1.90), acoustic preference match (+1.0)
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
 
